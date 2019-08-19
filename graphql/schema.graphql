@@ -6,13 +6,11 @@ scalar Date @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Date")
 
 type Query {
     users: [User!]! @paginate(type: "paginator" model: "App\\Users")
-    user(id: ID @eq): User @find(model: "App\\Users")
+    user(name: String @eq): User @find(model: "App\\Users")
 }
 
 type User {
     id: ID!
     name: String!
     email: String!
-#    created_at: DateTime!
-#    updated_at: DateTime!
 }
